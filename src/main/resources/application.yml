@@ -1,0 +1,25 @@
+udp:
+  host: localhost
+  temperature-sensor-port: 3344
+  humidity-sensor-port: 3355
+
+kafka:
+  group-id: weather
+  topic:
+    sensor: sensor
+
+spring:
+  application:
+    name: WeatherApp
+  kafka:
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+
+logging:
+  level:
+    org.apache.kafka: WARN
+    kafka: WARN
+    kafka.server: WARN
+    org.springframework.kafka: WARN
+    org.springframework.kafka.core.KafkaAdmin: WARN
+    reactor.netty: WARN
+    io.netty: WARN

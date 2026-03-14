@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package sensor;
+
+option java_package = "org.interview.protobuf";
+option java_outer_classname = "SensorMessage";
+
+message SensorData {
+  string sensor_id = 1;
+  SensorType type = 2;
+  double value = 3;
+}
+
+enum SensorType {
+  TEMPERATURE = 0;
+  HUMIDITY = 1;
+}
